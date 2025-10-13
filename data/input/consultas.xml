@@ -5,7 +5,7 @@
   <consulta><id_paciente>2</id_paciente><nome>João Costa</nome><nif>987654321</nif><telefone>913456789</telefone><email>joao.costa@example.com</email><data_consulta>2025-89-12</data_consulta><especialidade>Neurologia</especialidade></consulta>
   <consulta><id_paciente>3</id_paciente><nome>Ana Pereira</nome><nif>111222333</nif><telefone>514567890</telefone><email>ana.pereira@Example.com</email><data_consulta>20-09-5115</data_consulta><especialidade>Pediatria</especialidade></consulta>
   <consulta><id_paciente>4</id_paciente><nome>Carlos Mendes</nome><nif>444556660</nif><telefone>INVALIDO</telefone><email>carlos.mendes@example.com</email><data_consulta>2025-09-18</data_consulta><especialidade>oftalmologia</especialidade></consulta>
-  <consulta><id_paciente>5</id_paciente><nome>Rita Santos</nome><nif>999888777</nif><telefone>915678901</telefone><email>jpjbcmjg@gmail.com</email><data_consulta>2025-09-20</data_consulta><especialidade>dermatologia</especialidade></consulta>
+  <consulta><id_paciente>5</id_paciente><nome>Rita Santos</nome><nif>999888777</nif><telefone>915678901</telefone><email>fwfwfjg@afaffsa.com</email><data_consulta>2025-09-20</data_consulta><especialidade>dermatologia</especialidade></consulta>
   <consulta><id_paciente>6</id_paciente><nome>Pedro Alves</nome><nif>222333444</nif><telefone>916789012</telefone><email>jpjbcmjg@gmail.com</email><data_consulta>2025-09-22</data_consulta><especialidade>Ortopedia</especialidade></consulta>
   <consulta><id_paciente>7</id_paciente><nome>Ana Lopes</nome><nif>872456789</nif><telefone>912345678</telefone><email>Ana.Lopes@example.conm</email><data_consulta>2025-09-10</data_consulta><especialidade>ecografia</especialidade></consulta>
 
