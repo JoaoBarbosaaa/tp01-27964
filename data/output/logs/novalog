@@ -1,0 +1,71 @@
+2025-10-13 14:30:57.699 - Kitchen - Logging is at level : Basic
+2025-10-13 14:30:57.773 - Kitchen - Start of run.
+2025-10-13 14:31:01.898 - ETL_Master - Start of job execution
+2025-10-13 14:31:02.175 - ETL_Master - Starting entry [Checks if files exist (consultas)]
+2025-10-13 14:31:02.191 - ETL_Master - Starting entry [Consultas]
+2025-10-13 14:31:02.554 - Consultas - Using run configuration [Pentaho local]
+2025-10-13 14:31:02.634 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2025-10-13 14:31:02.640 - consultas - Expedindo in�cio para transforma��o [consultas]
+2025-10-13 14:31:02.761 - Table output.0 - Connected to database [coneccao] (commit=1000)
+2025-10-13 14:31:03.240 - Consultas.0 - Finished processing (I=101, O=0, R=0, W=101, U=0, E=0)
+2025-10-13 14:31:03.318 - Normalizar consultas.0 - Optimization level set to 9.
+2025-10-13 14:31:03.598 - Normalizar consultas.0 - Finished processing (I=0, O=0, R=101, W=101, U=0, E=0)
+2025-10-13 14:31:03.601 - Selecionar campos Consultas.0 - Finished processing (I=0, O=0, R=101, W=101, U=0, E=0)
+2025-10-13 14:31:03.606 - validarConsultas.0 - Finished processing (I=0, O=0, R=101, W=93, U=0, E=8)
+2025-10-13 14:31:03.607 - Log_Consultas_Rejeitados.0 - Finished processing (I=0, O=9, R=8, W=8, U=0, E=0)
+2025-10-13 14:31:03.611 - Select values.0 - Finished processing (I=0, O=0, R=93, W=93, U=0, E=0)
+2025-10-13 14:31:03.618 - Sort rows (Consultas).0 - Finished processing (I=0, O=0, R=93, W=93, U=0, E=0)
+2025-10-13 14:31:03.625 - Remove duplicados (Consultas).0 - Finished processing (I=0, O=0, R=93, W=92, U=0, E=0)
+2025-10-13 14:31:03.659 - Table output.0 - Finished processing (I=0, O=92, R=92, W=92, U=0, E=0)
+2025-10-13 14:31:03.674 - ETL_Master - Starting entry [Checks if files exist (exames)]
+2025-10-13 14:31:03.677 - ETL_Master - Starting entry [Exames]
+2025-10-13 14:31:03.728 - Exames - Using run configuration [Pentaho local]
+2025-10-13 14:31:03.729 - Exames - Expedindo in�cio para transforma��o [Exames]
+2025-10-13 14:31:03.746 - Table output.0 - Connected to database [coneccao] (commit=1000)
+2025-10-13 14:31:03.804 - Exames.0 - Header row skipped in file 'file:///C:/TP01_27964/dataint/../data/input/exames.csv'
+2025-10-13 14:31:03.806 - Normalizar exames .0 - Optimization level set to 9.
+2025-10-13 14:31:03.808 - Exames.0 - Finished processing (I=32, O=0, R=0, W=31, U=0, E=0)
+2025-10-13 14:31:03.879 - Normalizar exames .0 - Finished processing (I=0, O=0, R=31, W=31, U=0, E=0)
+2025-10-13 14:31:03.884 - renomear campos.0 - Finished processing (I=0, O=0, R=31, W=31, U=0, E=0)
+2025-10-13 14:31:03.892 - ValidarExames.0 - Finished processing (I=0, O=0, R=31, W=26, U=0, E=5)
+2025-10-13 14:31:03.897 - Select values 2.0 - Finished processing (I=0, O=0, R=26, W=26, U=0, E=0)
+2025-10-13 14:31:03.897 - Log_Exames_Rejeitados.0 - Finished processing (I=0, O=6, R=5, W=5, U=0, E=0)
+2025-10-13 14:31:03.900 - Sort rows (Exames).0 - Finished processing (I=0, O=0, R=26, W=26, U=0, E=0)
+2025-10-13 14:31:03.906 - Remover duplicados (exame).0 - Finished processing (I=0, O=0, R=26, W=24, U=0, E=0)
+2025-10-13 14:31:03.929 - Table output.0 - Finished processing (I=0, O=24, R=24, W=24, U=0, E=0)
+2025-10-13 14:31:03.938 - ETL_Master - Starting entry [join]
+2025-10-13 14:31:04.109 - join - Using run configuration [Pentaho local]
+2025-10-13 14:31:04.112 - join - Expedindo in�cio para transforma��o [join]
+2025-10-13 14:31:04.210 - Table output.0 - Connected to database [coneccao] (commit=1000)
+2025-10-13 14:31:04.274 - exames tables.0 - Finished reading query, closing connection
+2025-10-13 14:31:04.278 - exames tables.0 - Finished processing (I=24, O=0, R=0, W=24, U=0, E=0)
+2025-10-13 14:31:04.280 - Passar para hash.0 - Optimization level set to 9.
+2025-10-13 14:31:04.285 - consultas table.0 - Finished reading query, closing connection
+2025-10-13 14:31:04.289 - consultas table.0 - Finished processing (I=92, O=0, R=0, W=92, U=0, E=0)
+2025-10-13 14:31:04.590 - Merge join.0 - Finished processing (I=0, O=0, R=116, W=13, U=0, E=0)
+2025-10-13 14:31:04.591 - Select values 3.0 - Finished processing (I=0, O=0, R=13, W=13, U=0, E=0)
+2025-10-13 14:31:04.594 - Passar para hash.0 - Finished processing (I=0, O=0, R=4, W=4, U=0, E=0)
+2025-10-13 14:31:04.594 - Add constants.0 - Finished processing (I=0, O=0, R=5, W=5, U=0, E=0)
+2025-10-13 14:31:04.595 - Log_Registos_Passados.0 - Finished processing (I=0, O=5, R=4, W=4, U=0, E=0)
+2025-10-13 14:31:04.596 - Filter rows.0 - Finished processing (I=0, O=0, R=5, W=5, U=0, E=0)
+2025-10-13 14:31:04.599 - Select values.0 - Finished processing (I=0, O=0, R=4, W=4, U=0, E=0)
+2025-10-13 14:31:04.615 - Table output.0 - Finished processing (I=0, O=4, R=4, W=4, U=0, E=0)
+2025-10-13 14:32:03.149 - Mail.0 - Finished processing (I=0, O=0, R=5, W=5, U=0, E=0)
+2025-10-13 14:32:03.159 - ETL_Master - Starting entry [EXPORTAR_RESULTADOS]
+2025-10-13 14:32:03.283 - EXPORTAR_RESULTADOS - Using run configuration [Pentaho local]
+2025-10-13 14:32:03.286 - ExportarResultados - Expedindo in�cio para transforma��o [ExportarResultados]
+2025-10-13 14:32:03.394 - Table input.0 - Finished reading query, closing connection
+2025-10-13 14:32:03.398 - Table input.0 - Finished processing (I=4, O=0, R=0, W=4, U=0, E=0)
+2025-10-13 14:32:03.412 - JSON output.0 - Finished processing (I=0, O=1, R=4, W=1, U=0, E=0)
+2025-10-13 14:32:04.910 - HTTP post.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2025-10-13 14:32:04.915 - Mostrar resultados.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2025-10-13 14:32:04.925 - ETL_Master - Finished job entry [EXPORTAR_RESULTADOS] (result=[true])
+2025-10-13 14:32:04.927 - ETL_Master - Finished job entry [join] (result=[true])
+2025-10-13 14:32:04.930 - ETL_Master - Finished job entry [Exames] (result=[true])
+2025-10-13 14:32:04.932 - ETL_Master - Finished job entry [Checks if files exist (exames)] (result=[true])
+2025-10-13 14:32:04.933 - ETL_Master - Finished job entry [Consultas] (result=[true])
+2025-10-13 14:32:04.935 - ETL_Master - Finished job entry [Checks if files exist (consultas)] (result=[true])
+2025-10-13 14:32:04.937 - ETL_Master - Job execution finished
+2025-10-13 14:32:04.945 - Kitchen - Finished!
+2025-10-13 14:32:04.950 - Kitchen - Start=2025/10/13 14:31:01.884, Stop=2025/10/13 14:32:04.948
+2025-10-13 14:32:04.950 - Kitchen - Processing ended after 1 minutes and 3 seconds (63 seconds total).
