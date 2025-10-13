@@ -76,6 +76,13 @@ O objetivo deste trabalho foi desenvolver um **processo ETL (Extract, Transform,
 
 ---
 
+🧾 Geração dos Logs
+Para gerar os logs da execução do processo ETL, foram utilizados os seguintes comandos no Prompt de comando:
+-cd C:\Users\João\Downloads\pdi-ce-10.2.0.0-222\data-integration
+-Kitchen.bat /file:"C:\TP01_27964\dataint\ETL_Master.kjb" /level:Basic /logfile:"C:\TP01_27964\data\output\logs\novalog"
+
+---
+
 ## 🧪 Exemplos de Execução
 Após a execução do job principal, serão gerados ficheiros de saída no diretório:
 Exemplo:5,Rita Santos,999888777,915678901,jpjbcmjg@gmail.com,2025-09-20,dermatologia,RaioX        ,Alterado,2025-09-21
