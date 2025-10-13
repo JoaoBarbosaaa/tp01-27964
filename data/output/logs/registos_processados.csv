@@ -1,0 +1,5 @@
+id_paciente,nome,nif,telefone,email,data_consulta,especialidade,tipo_exame,resultado,data_exame
+5,Rita Santos,999888777,915678901,jpjbcmjg@gmail.com,2025-09-20,dermatologia,RaioX        ,Alterado,2025-09-21
+9,Sofia Castro,300100200,930223344,sofia.castro@mail.com,2024-11-01,Ginecologia,MRI          ,Normal  ,2025-10-01
+12,André Rocha,300700800,969876543,andre.rocha@mail.com,2026-02-05,Ortopedia,Hemograma    ,Normal  ,2025-10-12
+15,Teresa Lima,301101200,966777888,teresa.lima@mail.com,2026-05-20,Oftalmologia,Ressonancia  ,Normal  ,2025-10-22

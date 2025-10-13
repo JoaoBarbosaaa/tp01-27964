@@ -1,0 +1,6 @@
+id_paciente;tipo_exame;resultado;data_exame;MotivoRejeicao;CampoComErro
+19             ;Sangue       ;Normal  ;2025-13-45;Data invalida;data_exame
+20             ;Hemograma    ;Alterado;INVALIDO  ;Data invalida;data_exame
+21             ;Ecografia    ;Normal  ;2026-06-01;Data invalida;data_exame
+22             ;Glicose      ;Normal  ;2025-01-32;Data invalida;data_exame
+23             ;MRI          ;Alterado;2024-01-01;Data invalida;data_exame

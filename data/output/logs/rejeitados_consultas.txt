@@ -1,0 +1,9 @@
+id_paciente;nome;nif;telefone;email;data_consulta;especialidade;MotivoRejeicao;CampoComErro
+2;João Costa;987654321;913456789;joao.costa@example.com;2025-89-12;Neurologia;Data invalida;data_consulta
+3;Ana Pereira;111222333;514567890;ana.pereira@Example.com;20-09-5115;Pediatria;Data invalida;data_consulta
+4;Carlos Mendes;444556660;INVALIDO;carlos.mendes@example.com;2025-09-18;oftalmologia;Telefone inválido;telefone
+8;Luís Velez;s300000000;930871123456;luis.velez;2024-03-15;Fisioterapia;Email inválido;email
+18;Miguel Santos;301701800;NAO_NUMERICO;miguel.santos@mail.com;2025-11-10;Cardiologia;Telefone inválido;telefone
+19;Laura Martins;INV.123;924567890;laura.martins@mail.com;2025-11-15;Ginecologia;NIF inválido;nif
+20;Filipe Azevedo;302102200;935678901;filipe.azevedo@mail;2025-11-20;Otorrino;Email inválido;email
+21;Catarina Bastos;302302400;966789012;catarina.bastos@mail.com;2900-15-40;Fisioterapia;Data invalida;data_consulta
