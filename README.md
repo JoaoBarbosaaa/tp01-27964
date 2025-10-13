@@ -17,8 +17,8 @@ tp01-27964/
 │ └── 27964_27983_doc.pdf → Documento explicativo do trabalho (análise e resultados)
 │
 ├── dataint/
-| ├── logs/
-|   ├── *.csv  
+│ ├── logs/ → Ficheiros de logs gerados durante a execução das transformações/jobs
+│ ├── *.csv → Ficheiros intermédios ou auxiliares utilizados no processo ETL
 │ ├── *.ktr → Transformações desenvolvidas no Kettle
 │ └── *.kjb → Jobs utilizados para orquestrar as transformações
 │
@@ -28,7 +28,6 @@ tp01-27964/
 │ │
 │ └── output/ → Ficheiros de saída gerados pelo processo ETL
 │ └── *.json
-│
 
 
 ---
