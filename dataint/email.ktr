@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>join</name>
+    <name>email</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -428,10 +428,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2025/10/11 15:46:33.426</created_date>
+    <created_date>2025/10/13 15:50:09.990</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2025/10/11 15:46:33.426</modified_date>
-    <key_for_session_key>H4sIAAAAAAAA/wMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2025/10/13 15:50:09.990</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -441,7 +441,7 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>ETL_DB</database>
+    <database>ETL_db</database>
     <port>1433</port>
     <username>joaobarbosa</username>
     <password>Encrypted 2be98afc86aa7f2d5f94afa2588c5f783</password>
@@ -493,34 +493,29 @@
   </connection>
   <order>
     <hop>
-      <from>exames tables</from>
-      <to>Merge join</to>
+      <from>Add constants</from>
+      <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>consultas table</from>
-      <to>Merge join</to>
+      <from>Filter rows</from>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Passar para hash</from>
-      <to>Select values</to>
+      <from>Filter rows</from>
+      <to>Mail</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join</from>
-      <to>Passar para hash</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Table output</to>
+      <from>Table input</from>
+      <to>Add constants</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
+    <name>Add constants</name>
+    <type>Constant</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -531,363 +526,96 @@
     </partitioning>
     <fields>
       <field>
-        <name>id_paciente</name>
+        <name>sender_name</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>clinica</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>nome</name>
+        <name>sender_address</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>projetoisi4@gmail.com</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>nif</name>
+        <name>SMTP</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>smtp.gmail.com</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>telefone</name>
-      </field>
-      <field>
-        <name>email</name>
-      </field>
-      <field>
-        <name>data_consulta</name>
-      </field>
-      <field>
-        <name>especialidade</name>
-      </field>
-      <field>
-        <name>tipo_exame</name>
-      </field>
-      <field>
-        <name>resultado</name>
-      </field>
-      <field>
-        <name>data_exame</name>
-      </field>
-      <field>
-        <name>nome_hash</name>
-      </field>
-      <field>
-        <name>email_hash</name>
-      </field>
-      <field>
-        <name>nif_hash</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>id_paciente</name>
-        <rename>id_paciente</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>nome</name>
-        <rename>nome</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>nif</name>
-        <rename>nif</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>telefone</name>
-        <rename>telefone</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>email</name>
-        <rename>email</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>data_consulta</name>
-        <rename>data_consulta</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>especialidade</name>
-        <rename>especialidade</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>tipo_exame</name>
-        <rename>tipo_exame</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>resultado</name>
-        <rename>resultado</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>data_exame</name>
-        <rename>data_exame</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>nome_hash</name>
-        <rename>nome_hash</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>email_hash</name>
-        <rename>email_hash</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>nif_hash</name>
-        <rename>nif_hash</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Passar para hash</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>// Define os caracteres hexadecimais fora da função (melhor performance)
-var HEX_CHARS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+        <name>corpo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Prezado(a) cliente,
 
-// Função para gerar hash SHA-256 (VERSÃO CORRIGIDA)
-function hashSHA256(texto)
-{
-    // Verifica se o campo é null, undefined, OU uma string vazia/somente espaços.
-    if (texto == null || texto == undefined || String(texto).trim() === "") {
-        return null;
-    }
-    
-    try {
-        var md = java.security.MessageDigest.getInstance("SHA-256");
-        var bytes = md.digest(new java.lang.String(texto).getBytes(java.nio.charset.StandardCharsets.UTF_8));
-        
-        var sb = new java.lang.StringBuilder();
-        
-        // NOVO LOOP DE CONVERSÃO: Evita String.format()
-        for (var i = 0; i &lt; bytes.length; i++) {
-            var b = bytes[i] &amp; 0xFF; // Converte para unsigned byte
-            // Adiciona o caractere hexadecimal alto (nibble)
-            sb.append(HEX_CHARS[b >> 4]); 
-            // Adiciona o caractere hexadecimal baixo (nibble)
-            sb.append(HEX_CHARS[b &amp; 0x0F]);
-        }
-        
-        return sb.toString();
-    } catch (e) {
-        // Log para ver o erro real (opcional)
-        // java.lang.System.err.println("Erro ao calcular hash: " + e.toString());
-        return null;
-    }
-}
+Seu resultado de exame:
+Tipo de Exame: ${tipo_exame}
+Data de Realização: ${data_exame}
+Resultado: ${resultado}
 
-// === Lógica principal ===
-// Certifique-se de que os nomes de variáveis de entrada (nome, email, nif) estão corretos.
-var nome_hash = hashSHA256(String(nome)); 
-var email_hash = hashSHA256(email);
-var nif_hash = hashSHA256(nif);</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>nome_hash</name>
-        <rename>nome_hash</rename>
-        <type>String</type>
+Atenciosamente,
+Clinica</nullif>
         <length>-1</length>
         <precision>-1</precision>
-        <replace>N</replace>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>email_hash</name>
-        <rename>email_hash</rename>
+        <name>porta</name>
         <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>587</nullif>
         <length>-1</length>
         <precision>-1</precision>
-        <replace>N</replace>
+        <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>nif_hash</name>
-        <rename>nif_hash</rename>
+        <name>pass</name>
         <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>xcju lsqy xnwk fhzu</nullif>
         <length>-1</length>
         <precision>-1</precision>
-        <replace>N</replace>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>subject </name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Resultados exames</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
     <attributes/>
@@ -899,14 +627,14 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>192</yloc>
+      <xloc>528</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join</name>
-    <type>MergeJoin</type>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -915,15 +643,6 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>INNER</join_type>
-    <step1>exames tables</step1>
-    <step2>consultas table</step2>
-    <keys_1>
-      <key>id_paciente</key>
-    </keys_1>
-    <keys_2>
-      <key>id_paciente</key>
-    </keys_2>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -933,14 +652,14 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>192</yloc>
+      <xloc>848</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -949,25 +668,16 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>coneccao</connection>
-    <schema/>
-    <table>Resultados_ETL</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
+    <send_true_to>Mail</send_true_to>
+    <send_false_to>Dummy (do nothing)</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>tipo_exame</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue/>
+      </condition>
+    </compare>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -977,13 +687,80 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
-      <yloc>192</yloc>
+      <xloc>656</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>consultas table</name>
+    <name>Mail</name>
+    <type>Mail</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <server>SMTP</server>
+    <port>porta</port>
+    <destination>email</destination>
+    <destinationCc/>
+    <destinationBCc/>
+    <replyToAddresses/>
+    <replyto>sender_address</replyto>
+    <replytoname>sender_name</replytoname>
+    <subject/>
+    <include_date>N</include_date>
+    <include_subfolders>N</include_subfolders>
+    <zipFilenameDynamic>N</zipFilenameDynamic>
+    <isFilenameDynamic>N</isFilenameDynamic>
+    <attachContentFromField>N</attachContentFromField>
+    <attachContentField/>
+    <attachContentFileNameField/>
+    <dynamicFieldname/>
+    <dynamicWildcard/>
+    <dynamicZipFilename/>
+    <sourcefilefoldername/>
+    <sourcewildcard/>
+    <contact_person/>
+    <contact_phone/>
+    <comment>resultado</comment>
+    <include_files>N</include_files>
+    <zip_files>N</zip_files>
+    <zip_name/>
+    <zip_limit_size>0</zip_limit_size>
+    <use_auth>Y</use_auth>
+    <use_secure_auth>Y</use_secure_auth>
+    <auth_user>sender_address</auth_user>
+    <auth_password>Encrypted 2be98afc86aa7f2e4cb79ce10ce93bcc9</auth_password>
+    <only_comment>N</only_comment>
+    <use_HTML>Y</use_HTML>
+    <use_Priority>N</use_Priority>
+    <encoding>UTF-8</encoding>
+    <priority>high</priority>
+    <importance>normal</importance>
+    <sensitivity>normal</sensitivity>
+    <secureconnectiontype>TLS</secureconnectiontype>
+    <embeddedimages>
+      </embeddedimages>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table input</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -994,7 +771,7 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
       <schema_name/>
     </partitioning>
     <connection>coneccao</connection>
-    <sql>SELECT id_paciente, nome, nif, telefone, email, data_consulta, especialidade FROM consultas</sql>
+    <sql>SELECT * FROM Resultados_ETL</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1006,9 +783,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>id_paciente</name>
-        <length>20</length>
+        <length>50</length>
         <precision>-1</precision>
-        <origin>consultas table</origin>
+        <origin>Table input</origin>
         <comments>id_paciente</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1029,9 +806,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>nome</name>
-        <length>20</length>
+        <length>150</length>
         <precision>-1</precision>
-        <origin>consultas table</origin>
+        <origin>Table input</origin>
         <comments>nome</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1052,9 +829,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>nif</name>
-        <length>20</length>
+        <length>50</length>
         <precision>-1</precision>
-        <origin>consultas table</origin>
+        <origin>Table input</origin>
         <comments>nif</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1075,9 +852,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>telefone</name>
-        <length>20</length>
+        <length>50</length>
         <precision>-1</precision>
-        <origin>consultas table</origin>
+        <origin>Table input</origin>
         <comments>telefone</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1098,9 +875,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>email</name>
-        <length>100</length>
+        <length>150</length>
         <precision>-1</precision>
-        <origin>consultas table</origin>
+        <origin>Table input</origin>
         <comments>email</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1121,9 +898,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>data_consulta</name>
-        <length>20</length>
+        <length>10</length>
         <precision>-1</precision>
-        <origin>consultas table</origin>
+        <origin>Table input</origin>
         <comments>data_consulta</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1144,68 +921,10 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>especialidade</name>
-        <length>20</length>
+        <length>100</length>
         <precision>-1</precision>
-        <origin>consultas table</origin>
+        <origin>Table input</origin>
         <comments>especialidade</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/Lisbon</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>256</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>exames tables</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>coneccao</connection>
-    <sql>SELECT id_paciente, tipo_exame, resultado, data_exame FROM exames</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>id_paciente</name>
-        <length>10</length>
-        <precision>-1</precision>
-        <origin>exames tables</origin>
-        <comments>id_paciente</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1225,9 +944,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>tipo_exame</name>
-        <length>20</length>
+        <length>100</length>
         <precision>-1</precision>
-        <origin>exames tables</origin>
+        <origin>Table input</origin>
         <comments>tipo_exame</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1248,9 +967,9 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>resultado</name>
-        <length>20</length>
+        <length>100</length>
         <precision>-1</precision>
-        <origin>exames tables</origin>
+        <origin>Table input</origin>
         <comments>resultado</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1271,10 +990,79 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>data_exame</name>
-        <length>20</length>
+        <length>10</length>
         <precision>-1</precision>
-        <origin>exames tables</origin>
+        <origin>Table input</origin>
         <comments>data_exame</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/Lisbon</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>nome_hash</name>
+        <length>64</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>nome_hash</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/Lisbon</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>email_hash</name>
+        <length>64</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>email_hash</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/Lisbon</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>nif_hash</name>
+        <length>64</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>nif_hash</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1300,8 +1088,8 @@ var nif_hash = hashSHA256(nif);</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>128</yloc>
+      <xloc>352</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -930,6 +930,22 @@ id_paciente = String(id_paciente);</jsScript_script>
         <presorted>N</presorted>
       </field>
       <field>
+        <name>tipo_exame</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>resultado</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
         <name>data_exame</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
