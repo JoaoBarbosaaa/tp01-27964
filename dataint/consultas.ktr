@@ -519,7 +519,7 @@
     </hop>
     <hop>
       <from>validarConsultas</from>
-      <to>Log_Consultas_Rejeitados</to>
+      <to>Consultas_Rejeitados</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -700,7 +700,7 @@
     </GUI>
   </step>
   <step>
-    <name>Log_Consultas_Rejeitados</name>
+    <name>Consultas_Rejeitados</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -724,7 +724,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${Internal.Entry.Current.Directory}/../data/output/logs/rejeitados_consultas</name>
+      <name>${Internal.Entry.Current.Directory}/../data/output/rejeitados_consultas</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>txt</extention>
@@ -1541,7 +1541,7 @@ data_consulta = normalizarData(data_consulta);
   <step_error_handling>
     <error>
       <source_step>validarConsultas</source_step>
-      <target_step>Log_Consultas_Rejeitados</target_step>
+      <target_step>Consultas_Rejeitados</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename>MotivoRejeicao</descriptions_valuename>
