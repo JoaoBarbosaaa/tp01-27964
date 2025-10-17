@@ -3,7 +3,7 @@
 ## 📘 Identificação do Autor
 **Nome:** João Barbosa  
 **Número de Aluno:** 27964
-**Unidade Curricular:** Processos de Integração de Dados (ETL)  
+**Unidade Curricular:** Integração de sistemas de informação
 **Ferramenta Utilizada:** Pentaho Data Integration (Kettle)
 
 ---
